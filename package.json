@@ -1,0 +1,23 @@
+{
+  "name": "chat-node",
+  "version": "0.1.0",
+  "description": "realtime chat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deepyflo/chat-Node.git"
+  },
+  "author": "Florian Renders & Arnaud Losson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deepyflo/chat-Node/issues"
+  },
+  "homepage": "https://github.com/Deepyflo/chat-Node#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socketio": "^1.0.0"
+  }
+}
