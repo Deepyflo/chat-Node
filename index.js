@@ -7,16 +7,10 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 const port = 3000;
 const bodyParser = require('body-parser');
-const user = require('./Routes/user'); 
 let wrong = false;
-
-InitiateMongoServer();
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
-
-app.use('/user', user);
-
 
 app.get('/', (req, res) => {
     res.setHeader("Content-Type", "text/html");
@@ -25,9 +19,7 @@ app.get('/', (req, res) => {
 
 app.get('/login', (req, res) => {
     res.setHeader("Content-Type", "text/html");
-    res.sendFile(__dirname + '/Views/login.html');
     res.write('<p class="error">Wrong username or password</p>');
-    
 })
 app.post('/loginProcess', (req, res) => {
     res.setHeader("Content-Type", "text/html");
