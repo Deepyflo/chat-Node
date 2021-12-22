@@ -1,0 +1,118 @@
+/*--------------------
+Mixins
+--------------------*/
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin ball {
+    @include center;
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .5);
+    z-index: 2;
+    margin-top: 4px;
+    animation: ball .45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    .bg {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        background: rgb(0,0,0) url('../img/logo2.png') no-repeat 0 0;
+        filter: blur(1.75rem);
+        // transform: scale(1.2);
+    }
+    .box {
+        @include center;
+        max-width: 30vw;
+        height: 80vh;
+        max-height: 500px;
+        z-index: 2;
+        overflow: hidden;
+        box-shadow: 0 5px 30px rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        form {
+            h1 {
+                position: absolute;
+                left: 50%;
+                max-width: 15%;
+                height: auto;
+            }
+            p {
+                margin-bottom: 1rem;
+                height: auto;
+            }
+            img {
+                max-width: 15%;
+                height: auto;
+            }
+            .submit {
+                width: 103%;
+                padding: 10px;
+                border-radius: 0.7rem;
+                background: #E13845;
+                border-width: 0;
+                color: white;
+                border: none;
+                border-bottom: solid 1px;
+                border-left: solid 1px;
+            }
+            a {
+                div {
+                    text-align: center;
+                    width: 96%;
+                    padding: 10px;
+                    border-radius: 0.7rem;
+                    background: #F9F9F9;
+                    color:#E13845;
+                    border: none;
+                    border-bottom: solid 1px;
+                    border-left: solid 1px;
+                }
+                &:hover, &:visited {
+                    color: black;
+                    text-decoration: none;
+                }
+                color: black;
+                text-decoration: none;
+            }
+            input {
+                width: 98%;
+                height: 2rem;
+                padding-left: 1rem;
+                background: #E13845;
+                border: none;
+                border-bottom: solid 1px;
+                border-left: solid 1px;
+                border-radius: 1rem;
+                color: #F9F9F9;
+                &::placeholder {
+                    color: #F9F9F9;
+                }
+                
+
+            }
+        }
+    }
+}

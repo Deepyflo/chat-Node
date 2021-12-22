@@ -1,0 +1,129 @@
+/*--------------------
+Mixins
+--------------------*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body .bg {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+  background: black url("../img/logo2.png") no-repeat 0 0;
+  -webkit-filter: blur(1.75rem);
+          filter: blur(1.75rem);
+}
+
+body .box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 30vw;
+  height: 80vh;
+  max-height: 500px;
+  z-index: 2;
+  overflow: hidden;
+  -webkit-box-shadow: 0 5px 30px rgba(255, 255, 255, 0.5);
+          box-shadow: 0 5px 30px rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+body .box form h1 {
+  position: absolute;
+  left: 50%;
+  max-width: 15%;
+  height: auto;
+}
+
+body .box form p {
+  margin-bottom: 1rem;
+  height: auto;
+}
+
+body .box form img {
+  max-width: 15%;
+  height: auto;
+}
+
+body .box form .submit {
+  width: 103%;
+  padding: 10px;
+  border-radius: 0.7rem;
+  background: #E13845;
+  border-width: 0;
+  color: white;
+  border: none;
+  border-bottom: solid 1px;
+  border-left: solid 1px;
+}
+
+body .box form a {
+  color: black;
+  text-decoration: none;
+}
+
+body .box form a div {
+  text-align: center;
+  width: 96%;
+  padding: 10px;
+  border-radius: 0.7rem;
+  background: #F9F9F9;
+  color: #E13845;
+  border: none;
+  border-bottom: solid 1px;
+  border-left: solid 1px;
+}
+
+body .box form a:hover, body .box form a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+body .box form input {
+  width: 98%;
+  height: 2rem;
+  padding-left: 1rem;
+  background: #E13845;
+  border: none;
+  border-bottom: solid 1px;
+  border-left: solid 1px;
+  border-radius: 1rem;
+  color: #F9F9F9;
+}
+
+body .box form input::-webkit-input-placeholder {
+  color: #F9F9F9;
+}
+
+body .box form input:-ms-input-placeholder {
+  color: #F9F9F9;
+}
+
+body .box form input::-ms-input-placeholder {
+  color: #F9F9F9;
+}
+
+body .box form input::placeholder {
+  color: #F9F9F9;
+}
+/*# sourceMappingURL=stylelog.css.map */
