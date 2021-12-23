@@ -1,7 +1,3 @@
-![forthebadge](https://forthebadge.com/generator/?plabel=Made+with&slabel=Node.JS)
-![forthebadge](https://forthebadge.com/generator/?plabel=Made+with&slabel=Socket.IO)
-
-
 # chat-Node
 ## About
 **Authors :** [Florian Renders](https://github.com/Deepyflo), [Arnaud Losson](https://github.com/ArnaudLosson)
