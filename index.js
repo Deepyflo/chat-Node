@@ -7,12 +7,12 @@ const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
+require('dotenv').config();
 const io = new Server(server);
 const PORT = process.env.PORT || 80;
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-require('dotenv').config();
 const mongoose = require('mongoose');
 
 const { connect } = require('http2');
