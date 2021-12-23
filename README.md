@@ -1,3 +1,7 @@
+[![forthebadge](https://forthebadge.com/generator/?plabel=Made+with&slabel=Node.JS)
+[![forthebadge](https://forthebadge.com/generator/?plabel=Made+with&slabel=Socket.IO)
+
+
 # chat-Node
 ## About
 **Authors :** [Florian Renders](https://github.com/Deepyflo), [Arnaud Losson](https://github.com/ArnaudLosson)
@@ -5,24 +9,24 @@
 **End product :** [Parrot Chat](https://parrotchatbecode.herokuapp.com/)
 ## Mission objectives
 
--Create a *chat* in *Node.js*
--Install libraries with *npm*
--Use *Express.JS*
--Use *socket.IO*
+*Create a *chat* in *Node.js*
+*Install libraries with *npm*
+*Use *Express.JS*
+*Use *socket.IO*
 
 
 ## THe Mission
 
-1."register"
-2."login"/"logout"
-3."messages"
+*1."register"
+*2."login"/"logout"
+*3."messages"
 
 ### Original instructions
 
--Write your server whit *Node.js* and *Express.JS*
--Handle real time chatting with *Socket.IO*
--Allow for different user at the same time
--Keep messages after reloading the page
+*Write your server whit *Node.js* and *Express.JS*
+*Handle real time chatting with *Socket.IO*
+*Allow for different user at the same time
+*Keep messages after reloading the page
  
 
 (./Views/assets/img/parrotlogin.png)(./Views/assets/img/parrotChat.png)
