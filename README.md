@@ -1,5 +1,5 @@
-[![forthebadge](https://forthebadge.com/generator/?plabel=Made+with&slabel=Node.JS)
-[![forthebadge](https://forthebadge.com/generator/?plabel=Made+with&slabel=Socket.IO)
+![forthebadge](https://forthebadge.com/generator/?plabel=Made+with&slabel=Node.JS)
+![forthebadge](https://forthebadge.com/generator/?plabel=Made+with&slabel=Socket.IO)
 
 
 # chat-Node
