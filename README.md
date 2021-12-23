@@ -26,4 +26,4 @@
 * Keep messages after reloading the page
  
 
-(./Views/assets/img/parrotlogin.png)(./Views/assets/img/parrotChat.png)
+(./Views/assets/parrotlogin.png)(./Views/assets/parrotChat.png)
