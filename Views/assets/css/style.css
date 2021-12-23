@@ -1,27 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
-  padding-bottom: 3rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-#form {
-  background: rgba(0, 0, 0, 0.15);
-  padding: 0.25rem;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+body .bg {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+  background: black url("../img/logo2.png") no-repeat 0 0;
+  -webkit-filter: blur(1.75rem);
+          filter: blur(1.75rem);
+}
+
+body .box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 80vw;
+  min-height: 60vh;
+  max-height: 500px;
+  z-index: 2;
+  -webkit-box-shadow: 0 5px 30px rgba(255, 255, 255, 0.5);
+          box-shadow: 0 5px 30px rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 3rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .box #form {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 0.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-height: 3rem;
+  width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
-#form #input {
+body .box #form #input {
   border: none;
   padding: 0 1rem;
   -webkit-box-flex: 1;
@@ -29,41 +74,39 @@ body {
           flex-grow: 1;
   border-radius: 2rem;
   margin: 0.25rem;
+  height: 100%;
+  padding: 0.5rem 0;
+  padding-left: 0.1rem;
 }
 
-#form #input:focus {
+body .box #form #input:focus {
   outline: none;
 }
 
-#form button {
+body .box #form button {
   background: #333;
   border: none;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
   margin: 0.25rem;
   border-radius: 3px;
+  height: 100%;
   outline: none;
   color: #fff;
 }
 
-#messages {
+body .box #messages {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  overflow-y: scroll;
 }
 
-#messages li {
+body .box #messages li {
+  border-radius: 1rem;
   padding: 0.5rem 1rem;
 }
 
-#messages li:nth-child(odd) {
+body .box #messages li:nth-child(odd) {
   background: #efefef;
-}
-
-.error {
-  color: red;
-}
-
-.succes {
-  color: green;
 }
 /*# sourceMappingURL=style.css.map */

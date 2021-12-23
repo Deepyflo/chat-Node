@@ -1,54 +1,102 @@
-body { 
-    margin : 0; 
-    padding-bottom: 3rem; 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-#form { 
-    background: rgba(0, 0, 0, 0.15); 
-    padding: 0.25rem; 
-    position: fixed; 
-    bottom: 0; 
-    left: 0; 
-    right: 0; 
-    display: flex; 
-    height: 3rem; 
-    box-sizing: border-box; 
-    backdrop-filter: blur(10px); 
-    #input { 
-        border: none; 
-        padding: 0 1rem; 
-        flex-grow: 1; 
-        border-radius: 2rem; 
-        margin: 0.25rem;
-        &:focus { 
-            outline: none;
+@mixin ball {
+    @include center;
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .5);
+    z-index: 2;
+    margin-top: 4px;
+    animation: ball .45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body { 
+    margin : 0; 
+    // padding-bottom: 3rem; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+    .bg {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        background: rgb(0,0,0) url('../img/logo2.png') no-repeat 0 0;
+        filter: blur(1.75rem);
+    }
+    .box {
+        @include center;
+        max-width: 80vw;
+        min-height: 60vh;
+        max-height: 500px;
+        z-index: 2;
+        
+        box-shadow: 0 5px 30px rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        #form { 
+            background: rgba(0, 0, 0, 0.15); 
+            padding: 0.25rem;
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 3rem; 
+            width: 100%;
+            box-sizing: border-box; 
+            backdrop-filter: blur(10px);
+            border-bottom-left-radius:1rem;
+            border-bottom-right-radius:1rem;
+            #input { 
+                border: none; 
+                padding: 0 1rem; 
+                flex-grow: 1; 
+                border-radius: 2rem; 
+                margin: 0.25rem;
+                height: 100%;
+                padding: 0.5rem 0;
+                padding-left: 0.1rem;
+                &:focus { 
+                    outline: none;
+                }
+            }
+            button { 
+                background: #333; 
+                border: none; 
+                padding: 0.5rem 1rem; 
+                margin: 0.25rem;
+                border-radius: 3px; 
+                height:100%;
+                outline: none; 
+                color: #fff; 
+            }
+        }
+        #messages { 
+            list-style-type: none;
+            margin: 0; 
+            padding: 0;
+            overflow-y: scroll;
+            li { 
+                border-radius: 1rem;
+                padding: 0.5rem 1rem;
+                &:nth-child(odd) { 
+                    background: #efefef;
+                }
+            }
         }
     }
-    button { 
-        background: #333; 
-        border: none; 
-        padding: 0 1rem; 
-        margin: 0.25rem;
-        border-radius: 3px; 
-        outline: none; 
-        color: #fff; 
-    }
-}
-#messages { 
-    list-style-type: none;
-    margin: 0; 
-    padding: 0; 
-    li { 
-        padding: 0.5rem 1rem;
-        &:nth-child(odd) { 
-            background: #efefef;
-        }
-    }
-}
-.error {
-    color: red
-}
-.succes {
-    color: green;
 }

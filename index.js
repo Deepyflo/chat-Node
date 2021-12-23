@@ -2,6 +2,7 @@ const express = require('express');
 const expsession = require('express-session');
 const InitiateMongoServer = require('./DB/database.js')
 const User = require('./Model/userModel')
+const Messages = require('./Model/chatSchema');
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
@@ -13,6 +14,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 require('dotenv').config();
 const mongoose = require('mongoose');
+
+const { connect } = require('http2');
 let wrong = false;
 
 const MONGODB_USER = process.env.MONGO_USER;
@@ -77,38 +80,46 @@ app.post('/register', (req, res) => {
         if (!user) {
             User.register(new User({username: req.body.username}), req.body.password, (err, user) => {
                 if (err) res.json({success: false, message: err});
-                    passport.authenticate('local')(req, res, () => {
-                        res.redirect('/login');
-                })
-            })
+                passport.authenticate('local')(req, res, () => {
+                    res.redirect('/login');
+                });
+            });
         }
-    })
+    });
 });
 
 app.get('/chat', (req, res) => {
     res.sendFile(__dirname + '/Views/chat.html');
+    
 });
 
 app.get('/logout', (req, res) => {
-    res.redirect('..');
-})
-
-app.post('/logout', (req, res) => {
-    req.logOut();
-})
+    req.logout();
+    res.redirect("/");
+});
 
 io.on('connection', (socket) => {
+    Messages.find({}).lean().exec((err, records) => {
+        if (err) console.log("cheh!");
+        records.forEach(element => {
+            socket.emit("chat message", element.sender + " : " + element.message);
+            console.log(element.sender + " : " + element.message);
+        });
+        console.log("messages loaded");
+    })
     console.log('user ' + socket.request.user.username + ' connected');
     socket.on('disconnect', () => {
         console.log('user ' + socket.request.user.username + ' disconnected');
     });
-
     socket.on('chat message', (msg) => {
         console.log(socket.request.user.username + ' : ' + msg);
         io.emit('chat message', socket.request.user.username + ' : ' + msg);
-    })
+        Messages.create({
+            sender: socket.request.user.username,
+            message: msg
+        });
+    });
 });
-
 
 server.listen(port, () => {
     console.log(`listening at http://localhost:${port}`);
