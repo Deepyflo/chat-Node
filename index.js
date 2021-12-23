@@ -8,7 +8,7 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
-const port = 3000;
+const PORT = 3000;
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
@@ -122,5 +122,5 @@ io.on('connection', (socket) => {
 });
 
 server.listen(port, () => {
-    console.log(`listening at http://localhost:${port}`);
+    console.log(`listening at http://localhost:${PORT}`);
 });
